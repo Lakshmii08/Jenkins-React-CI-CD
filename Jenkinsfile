@@ -4,38 +4,33 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/<username>/Jenkins-React-CI-CD.git'
-            }
-        }
-
-
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                echo "Installing Node Dependencies"
+                bat "npm install"
             }
         }
 
 
-        stage('Build') {
+        stage('Build React Application') {
             steps {
-                bat 'npm run build'
+                echo "Building React Application"
+                bat "npm run build"
             }
         }
 
 
         stage('Test') {
             steps {
-                bat 'npm test'
+                echo "Running Tests"
+                bat "npm test"
             }
         }
 
 
         stage('Deploy') {
             steps {
-                echo 'Deploying React Application'
+                echo "Deploying Application"
             }
         }
 
@@ -45,11 +40,11 @@ pipeline {
     post {
 
         success {
-            echo 'Pipeline Completed Successfully'
+            echo "Pipeline Completed Successfully"
         }
 
         failure {
-            echo 'Pipeline Failed'
+            echo "Pipeline Failed"
         }
 
     }
