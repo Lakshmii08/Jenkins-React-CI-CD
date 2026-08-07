@@ -1,0 +1,30 @@
+{
+  "name": "jenkins-react-ci-cd",
+  "version": "1.0.0",
+
+  "scripts": {
+
+    "dev": "vite",
+
+    "build": "vite build",
+
+    "test": "echo \"No tests available\" && exit 0"
+
+  },
+
+  "dependencies": {
+
+    "react": "^18.3.1",
+
+    "react-dom": "^18.3.1"
+
+  },
+
+  "devDependencies": {
+
+    "vite": "^5.4.0",
+
+    "@vitejs/plugin-react": "^5.0.0"
+
+  }
+}
