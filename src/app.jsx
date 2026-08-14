@@ -8,7 +8,7 @@ function App() {
       <h1>Jenkins CI/CD React Project</h1>
 
       <p>
-        This is a simple React application deployed using Jenkins Pipeline.
+        This is a  application deployed using Jenkins Pipeline.
       </p>
 
       <div className="card">
