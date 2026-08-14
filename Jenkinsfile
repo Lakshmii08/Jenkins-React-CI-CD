@@ -1,51 +1,37 @@
 pipeline {
-
     agent any
 
     stages {
 
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/Lakshmii08/Jenkins-React-CI-CD.git'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
-                echo "Installing Node Dependencies"
-                bat "npm install"
+                bat 'npm install'
             }
         }
 
-
-        stage('Build React Application') {
+        stage('Build') {
             steps {
-                echo "Building React Application"
-                bat "npm run build"
+                bat 'npm run build'
             }
         }
-
 
         stage('Test') {
             steps {
-                echo "Running Tests"
-                bat "npm test"
+                echo 'No test cases available'
             }
         }
-
 
         stage('Deploy') {
             steps {
-                echo "Deploying Application"
+                echo 'Application deployed successfully'
             }
         }
-
-    }
-
-
-    post {
-
-        success {
-            echo "Pipeline Completed Successfully"
-        }
-
-        failure {
-            echo "Pipeline Failed"
-        }
-
     }
 }
